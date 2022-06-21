@@ -36,7 +36,7 @@ class S_Machine {
         {
         case ACUMULAR:
             adder  += sgn[count];
-            if(count == N)
+            if(count < N)
                 {
                     count = 0;
                     state = PROMEDIAR;
