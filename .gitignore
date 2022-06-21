@@ -1,1 +1,6 @@
 /.git
+
+*.exe
+
+/root/
+    /.vscode/ 
