@@ -1,12 +1,10 @@
 #include <stdint.h>
-#include <button.hpp>
-
-using namespace button;
+# define my_sizeof(type) ((char *)(&type+1)-(char*)(&type))
 
 typedef enum {ACUMULAR, PROMEDIAR} states;
 
 uint16_t sgn[] = {
-#include "Python/sgn.h"
+#include "../Python/sgn.h"
 };
 
 class S_Machine {
@@ -29,7 +27,7 @@ class S_Machine {
         if(N > size)
             {
                 printf("El numero de muestras solicitado supera el tamaño del archivo, se tomara como N el tamaño del array \n");
-                N = size;
+                N = size-1;
             }
     }
 
@@ -47,10 +45,12 @@ class S_Machine {
                 count++;
             break;
         case PROMEDIAR:
-            int avg = adder/N;
-            printf("El promedio de las muestras para N=%d es: %2.f", N,avg);
+            float avg = adder/float(N);
+            printf("El promedio de las muestras para N=%d es: %.2f", N,avg);
             count = 0;
             state = ACUMULAR;
+            break;
         }
+        return;
     }
-}
+};
