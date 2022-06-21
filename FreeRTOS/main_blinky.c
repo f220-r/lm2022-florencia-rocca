@@ -140,7 +140,7 @@ static TimerHandle_t xTimer = NULL;
 static xSemaphoreHandle adc_sem = NULL;
 
 /*-----------------------------------------------------------*/
-
+static S_Machine Maquina();
 /*** SEE THE COMMENTS AT THE TOP OF THIS FILE ***/
 void main_blinky(void)
 {
