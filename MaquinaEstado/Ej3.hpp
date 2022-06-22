@@ -38,7 +38,6 @@ class S_Machine {
             adder  += sgn[count];
             if(count == (N-1))
                 {
-                    count = 0;
                     state = PROMEDIAR;
                 }
             else
